@@ -1,7 +1,10 @@
 import React from 'react'
-import { useFetch } from '../../../hooks/useFetch'
-import Card from '../Card'
+
+
 import "./Products.scss"
+import Card from '../Card/Card'
+import { Link } from 'react-router-dom'
+import { useFetch } from '../../hooks/useFetch'
 
 const Products = () => {
     const {allProducts,loading}=useFetch('https://fakestoreapi.com/products')
@@ -12,7 +15,9 @@ const Products = () => {
       {allProducts?.map(product=>{
         const {id, title, price,category,image, rating}=product
 
-        return <Card key={id} title={title} image={image} price={price} id={id} category={category}/>
+        return <Card key={id} title={title} image={image} price={price} id={id} category={category} />
+         
+    
       })}
     </main>
   )

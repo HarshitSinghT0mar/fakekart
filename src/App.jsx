@@ -1,6 +1,7 @@
 
+import { Outlet } from 'react-router-dom'
 import './App.scss'
-import Products from './components/Card/Products/Products'
+
 
 function App() {
 
@@ -8,7 +9,9 @@ function App() {
 
   return (
     <>
-    <Products />
+    {/* <Products /> */}
+    <Outlet />
+  
     </>
   )
 }

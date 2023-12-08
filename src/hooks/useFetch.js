@@ -4,6 +4,7 @@ export const useFetch = (api) => {
   const [allProducts, setAllProducts] = useState(null);
   const [loading, setLoading] = useState(false);
 
+
   useEffect(() => {
     try {
       setLoading(true);
@@ -17,5 +18,14 @@ export const useFetch = (api) => {
     }
   }, []);
 
-  return { allProducts, setAllProducts, loading };
+  const fetchSingleProduct=async (api)=>{
+    const [singleProduct, setSingleProduct] = useState(null);
+ 
+  const res=await fetch(api)
+  const data=await res.json()
+  data.length?.setSingleProduct(data)
+  return {setSingleProduct,singleProduct}
+};
+
+  return { allProducts, setAllProducts, loading,fetchSingleProduct};
 };
