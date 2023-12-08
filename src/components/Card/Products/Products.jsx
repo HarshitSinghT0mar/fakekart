@@ -12,7 +12,7 @@ const Products = () => {
       {allProducts?.map(product=>{
         const {id, title, price,category,image, rating}=product
 
-        return <Card key={id} title={title} image={image} price={price} id={id}/>
+        return <Card key={id} title={title} image={image} price={price} id={id} category={category}/>
       })}
     </main>
   )
