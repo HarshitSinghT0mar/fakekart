@@ -1,0 +1,34 @@
+.search-container {
+    display: flex;
+    align-items: center;
+  font-size: xx-small;
+  }
+  
+  input {
+    padding: 4px;
+  
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-right: 8px;
+    font-size: 8px;
+
+    &:focus {
+       outline: none; // Remove the border on focus
+      }
+  }
+  
+  button {
+    padding: 4px 6px;
+
+    background-color: #34db4d;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: x-small;
+  }
+  
+  button:hover {
+    background-color: #31c147;
+  }
+  

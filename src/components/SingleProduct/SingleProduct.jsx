@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import { useParams } from 'react-router-dom'
-
-import ProductDetailsCard from '../../hooks/ProductDetailsCard/ProductDetailsCard'
-
 const SingleProduct = () => {
   const [singleProduct,setSingleProduct]=useState([])
   const [loading, setLoading]=useState(false)
