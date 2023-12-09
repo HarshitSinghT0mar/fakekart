@@ -18,14 +18,17 @@ export const useFetch = (api) => {
     }
   }, []);
 
-  const fetchSingleProduct=async (api)=>{
-    const [singleProduct, setSingleProduct] = useState(null);
- 
-  const res=await fetch(api)
-  const data=await res.json()
-  data.length?.setSingleProduct(data)
-  return {setSingleProduct,singleProduct}
-};
+//   const fetchSingleProduct=async (api)=>{
+//     setLoading(true)
+//     // const [singleProduct, setSingleProduct] = useState(null);
+//  const singleProduct=[]
+//   const res=await fetch(api)
+//   const data=await res.json()
+//  await data.length?.res.push(data)
 
-  return { allProducts, setAllProducts, loading,fetchSingleProduct};
+//  setLoading(false)
+//   return {singleProduct}
+// };
+
+  return { allProducts, setAllProducts, loading};
 };

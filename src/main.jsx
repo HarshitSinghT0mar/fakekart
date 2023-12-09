@@ -9,12 +9,17 @@ import SingleProduct from './components/SingleProduct/SingleProduct.jsx'
 
 
 
+
 const router=createBrowserRouter((createRoutesFromElements(
   <Route path="/" element={<App />}>
-  <Route path="products/" element={<Products />} />
-  <Route path="" element={<Products />} />
 
   <Route path='products/:id' element={<SingleProduct />}/>
+  
+  <Route path="" element={<Products />} />
+  <Route path="products" element={<Products />} />
+  
+
+
     
   
   {/* <Route path="/" element={<Products />}/> */}

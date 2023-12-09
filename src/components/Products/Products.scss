@@ -1,9 +1,16 @@
 .products-container{
     width: 100%;
-    display: flex;
+    display: grid;
     height: 100%;
     gap: 4rem;
-    flex-wrap:wrap;
-justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+ 
+   
+
+a{
+    text-decoration: none;
+    color: black;
+  }
+
 // background-color: slategray;
 }

@@ -1,14 +1,42 @@
-import React from 'react'
-import { useFetch } from  '../../hooks/useFetch'
+import React, { useEffect, useState } from 'react'
+
 import { useParams } from 'react-router-dom'
 
+import ProductDetailsCard from '../../hooks/ProductDetailsCard/ProductDetailsCard'
+
 const SingleProduct = () => {
+  const [singleProduct,setSingleProduct]=useState([])
+  const [loading, setLoading]=useState(false)
     const {id}=useParams()
 
-    const {fetchSingleProduct}=useFetch(`https://fakestoreapi.com/products/${id}`)
+const api=`https://fakestoreapi.com/products/${id}`
+
+  const fetchSingleProduct=async ()=>{
+  setLoading(true)
+  const res=await fetch(api)
+  const data=await res.json()
+   if(data.length)setSingleProduct(data)
+setLoading(false)
+};
+
+useEffect(()=>{
+fetchSingleProduct()
+},[singleProduct])
+   
+
+if(loading) return <p>Loading....</p>
+
+console.log(singleProduct);
+
   return (
     <div>
-      Single Product
+    {singleProduct?.map((product)=>{
+      const { id, title, price, category, image, rating,description} = product;
+
+      return <ProductDetailsCard image={image} price={price} description={description} category={category} rating={rating} title={title}/>
+
+    })}
+ 
     </div>
   )
 }
