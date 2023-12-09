@@ -1,6 +1,7 @@
 
 import { Outlet } from 'react-router-dom'
 import './App.scss'
+import { FilterProvider } from './contexts/FilterContext'
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
     {/* <Products /> */}
+   
     <Outlet />
   
     </>
