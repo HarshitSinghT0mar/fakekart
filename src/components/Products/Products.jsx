@@ -6,32 +6,39 @@ import { Link } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import Filters from "../Filters/Filters";
 import { useFetchData } from "../../hooks/useFetchData";
+import { useFilterContext } from "../../contexts/FilterContext";
 
 const Products = () => {
-  const {data:allProducts } = useFetchData(
-    "https://fakestoreapi.com/products"
-  );
+  const { selectedCategory } = useFilterContext();
 
-  // if (loading) return <h1>Loading...</h1>;
+  const allProductApi=`https://fakestoreapi.com/products`
+  const categoryApi= `https://fakestoreapi.com/products/category/${selectedCategory}`
+
+  const { data: allProducts,setData } = useFetchData(
+ 
+    selectedCategory.length?categoryApi:allProductApi
+  );
+  
+
   return (
     <div className="home">
-    <Filters allProducts={allProducts} />
-    <main className="products-container">
-      {allProducts?.map((product) => {
-        const { id, title, price, category, image } = product;
-       
-        return (
-          <Card
-            key={id}
-            title={title}
-            image={image}
-            price={price}
-            id={id}
-            category={category}
-          />
-        );
-      })}
-    </main>
+      <Filters />
+      <main className="products-container">
+        {allProducts?.map((product) => {
+          const { id, title, price, category, image } = product;
+
+          return (
+            <Card
+              key={id}
+              title={title}
+              image={image}
+              price={price}
+              id={id}
+              category={category}
+            />
+          );
+        })}
+      </main>
     </div>
   );
 };

@@ -4,16 +4,11 @@ import { useFilterContext } from '../../../contexts/FilterContext';
 
 
 const CategoryFilter = () => {
-    const {selectedCategory,setSelectedCategory}=useFilterContext()
+    const {setSelectedCategory}=useFilterContext()
 
     const {data:categories}=useFetchData(`https://fakestoreapi.com/products/categories`)
 
-    const selectCategory=(category)=>{
-       setSelectedCategory(category)
-    }
- 
 
-    // console.log(selectedCategory);
   return (
     <div className="category-filter-container">
         <h4>Category</h4>
@@ -21,7 +16,7 @@ const CategoryFilter = () => {
         {categories?.map((category,index) => {
           return (
             <div key={index}>
-              <input type="radio" id={category} name="category" value={category} onChange={(e)=>selectCategory(category)}/>
+              <input type="radio" id={category} name="category" value={category} onChange={()=>setSelectedCategory(category)}/>
               <label htmlFor={category}>{category}</label>
             </div>
           );
