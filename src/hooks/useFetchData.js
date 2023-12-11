@@ -4,13 +4,13 @@ import { fetchApiData } from "../services/fetchApiData";
 export const useFetchData=(api)=>{
     const [data, setData] = useState([]);
 
-    console.log(api);
+    // console.log(api);
 
     useEffect(() => {
       const fetchData = async () => {
         try {
           const res = await fetchApiData(api);
-          setData(res);
+          setData(()=>res);
         } catch (error) {
           console.error("Error fetching data:", error);
         }

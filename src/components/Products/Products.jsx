@@ -2,8 +2,6 @@ import React from "react";
 
 import "./Products.scss";
 import Card from "../Card/Card";
-import { Link } from "react-router-dom";
-import { useFetch } from "../../hooks/useFetch";
 import Filters from "../Filters/Filters";
 import { useFetchData } from "../../hooks/useFetchData";
 import { useFilterContext } from "../../contexts/FilterContext";
@@ -14,10 +12,13 @@ const Products = () => {
   const allProductApi=`https://fakestoreapi.com/products`
   const categoryApi= `https://fakestoreapi.com/products/category/${selectedCategory}`
 
-  const { data: allProducts,setData } = useFetchData(
+  const { data: allProducts } = useFetchData(
  
     selectedCategory.length?categoryApi:allProductApi
   );
+
+
+  if(allProducts.length===0) return <p>Loading...</p>
   
 
   return (

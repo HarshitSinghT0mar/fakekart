@@ -5,15 +5,15 @@ const FilterContext = createContext();
 export const FilterProvider = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [priceFilter, setPriceFilter] = useState('');
-  const [searchFilter, setSearchFilter] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const contextValue = {
     selectedCategory,
     setSelectedCategory,
     priceFilter,
     setPriceFilter,
-    searchFilter,
-    setSearchFilter,
+    searchQuery,
+    setSearchQuery,
   };
 
   return (
