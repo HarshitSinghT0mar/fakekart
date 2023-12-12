@@ -4,14 +4,14 @@ import { useFilterContext } from '../../../contexts/FilterContext';
 
 const Pagination = ({ totalProducts}) => {
 
-    const {currentPage,setCurrentPage}=useFilterContext()
- const totalPages=Math.ceil(totalProducts.length/5)
+//     const {currentPage,setCurrentPage}=useFilterContext()
+//  const totalPages=Math.ceil(totalProducts.length/5)
 
-const pageNumbers=Array.from({ length: totalPages }, (_, index) => index + 1);
+// const pageNumbers=Array.from({ length: totalPages }, (_, index) => index + 1);
 
-const onPageChange=(page)=>{
-setCurrentPage(page)
-}
+// const onPageChange=(page)=>{
+// setCurrentPage(page)
+// }
 
   return (
     <div className="pagination">

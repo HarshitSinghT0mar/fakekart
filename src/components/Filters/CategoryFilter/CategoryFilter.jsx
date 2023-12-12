@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFetchData } from '../../../hooks/useFetchData';
-import { useFilterContext } from '../../../contexts/FilterContext';
+// import { useFilterContext } from '../../../contexts/FilterContext';
+import { useProductContext } from '../../../contexts/ProductContext';
 
 
 const CategoryFilter = () => {
-    const {setSelectedCategory}=useFilterContext()
+    const [selectedCategory,setSelectedCategory]=useState('')
+    const {setProducts,products}=useProductContext()
 
     const {data:categories}=useFetchData(`https://fakestoreapi.com/products/categories`)
 
+    const {data:categoryProducts}=useFetchData(`https://fakestoreapi.com/products/category/${selectedCategory}`)
 
+useEffect(()=>{
+    
+categoryProducts.length && setProducts(categoryProducts)
+
+},[selectedCategory,categoryProducts])
+ 
   return (
     <div className="category-filter-container">
         <h4>Category</h4>

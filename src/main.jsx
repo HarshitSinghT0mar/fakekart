@@ -8,10 +8,10 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Products from "./components/Products/Products.jsx";
 import SingleProduct from "./components/SingleProduct/SingleProduct.jsx";
 import { FilterProvider } from "./contexts/FilterContext.jsx";
 import Home from "./Pages/home/Home.jsx";
+import { ProductProvider } from "./contexts/ProductContext.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,9 +27,12 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <FilterProvider>
+    <ProductProvider>
       <RouterProvider router={router}>
         <App />
       </RouterProvider>
+      </ProductProvider>
     </FilterProvider>
+
   </React.StrictMode>
 );

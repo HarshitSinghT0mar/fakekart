@@ -7,27 +7,26 @@ import { useFilterContext } from "../../contexts/FilterContext";
 import { useFetchData } from "../../hooks/useFetchData";
 
 const Home = () => {
-  const { selectedCategory,setTotalProducts } = useFilterContext();
+  // const { selectedCategory,setTotalProducts,totalProducts } = useFilterContext();
 
-  const allProductApi = `https://fakestoreapi.com/products`;
-  const categoryApi = `https://fakestoreapi.com/products/category/${selectedCategory}`;
+  // const allProductApi = `https://fakestoreapi.com/products`;
+  // const categoryApi = `https://fakestoreapi.com/products/category/${selectedCategory}`;
 
-  const { data: allProducts } = useFetchData(
-    selectedCategory.length ? categoryApi : allProductApi
-  );
- useEffect(()=>{
-  setTotalProducts(allProducts)
- })
-
+  // const { data: products, setData:setProducts } = useFetchData(
+  //   selectedCategory.length ? categoryApi : allProductApi
+  // );
+//  useEffect(()=>{
+//   setTotalProducts(products)
+//  },[])
 
 
   return (
     <>
       <div className="home">
         <Filters />
-        <Products allProducts={allProducts}/>
+        <Products />
       </div>
-      <Pagination totalProducts={allProducts}/>
+      {/* <Pagination /> */}
     </>
   );
 };
