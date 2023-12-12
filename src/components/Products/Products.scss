@@ -1,25 +1,12 @@
-.home{
-max-width: 100%;
+.products-container {
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  height: 100%;
+  gap: 4rem;
+  grid-template-columns: repeat(3, 1fr);
 
-  // vertical-align: middle;
-  
-  .products-container{
-    width: 100%;
-    display: grid;
-    height: 100%;
-    gap: 4rem;
-    grid-template-columns: repeat(3, 1fr);
- 
-   
-
-a{
+  a {
     text-decoration: none;
     color: black;
   }
-
-// background-color: slategray;
-}
-
 }

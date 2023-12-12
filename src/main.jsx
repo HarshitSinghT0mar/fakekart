@@ -11,14 +11,16 @@ import {
 import Products from "./components/Products/Products.jsx";
 import SingleProduct from "./components/SingleProduct/SingleProduct.jsx";
 import { FilterProvider } from "./contexts/FilterContext.jsx";
+import Home from "./Pages/home/Home.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="products/:id" element={<SingleProduct />} />
+      <Route path="products" element={<Home />} />
 
-      <Route path="" element={<Products />} />
-      <Route path="products" element={<Products />} />
+      <Route path="" element={<Home />} />
+      
     </Route>
   )
 );

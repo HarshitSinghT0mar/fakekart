@@ -30,19 +30,6 @@ const {data:categories}=useFetchData(`https://fakestoreapi.com/products/categori
       <h2>Filters</h2>
     <SearchComponent />
     <CategoryFilter />
-
-      {/* <div className="category-filter-container">
-        <h4>Category</h4>
-
-        {categories?.map((category,index) => {
-          return (
-            <div key={index}>
-              <input type="radio" id={category} name="category" />
-              <label htmlFor={category}>{category}</label>
-            </div>
-          );
-        })}
-      </div> */}
       <div></div>
       <div></div>
     </div>

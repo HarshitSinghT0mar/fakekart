@@ -18,7 +18,7 @@ const Card = (props) => {
        </Link>
     <div className='card-body'>
       <p className='title'>{title}</p>
-      {/* <p>{}</p> */}
+  
     
     <div className='card-footer'>
       <span className='price'>{`$${price}`}</span>

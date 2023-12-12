@@ -9,10 +9,9 @@ const SingleProduct = () => {
   const api = `https://fakestoreapi.com/products/${id}`;
   const { data: productDetails } = useFetchData(api);
 
-  console.log(productDetails);
+  // console.log(productDetails);
   const { productId, title, price, category, image, rating, description } =
     productDetails;
-  // if(productDetails.length===0) return <h1>Loading...</h1>
 
   return (
     <>
