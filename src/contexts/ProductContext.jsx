@@ -8,10 +8,11 @@ export const ProductProvider = ({ children }) => {
     `https://fakestoreapi.com/products`
   );
   const [products, setProducts] = useState([]);
-  
+
 useEffect(()=>{
 setProducts(allProducts)
-},[allProducts])
+},[allProducts,setAllProducts])
+
   return (
     <ProductContext.Provider
       value={{ products, setProducts, allProducts, setAllProducts }}

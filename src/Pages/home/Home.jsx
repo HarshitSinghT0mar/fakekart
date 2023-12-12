@@ -26,7 +26,7 @@ const Home = () => {
         <Filters />
         <Products />
       </div>
-      {/* <Pagination /> */}
+      <Pagination />
     </>
   );
 };

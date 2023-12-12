@@ -1,17 +1,19 @@
 import React from 'react';
 import './Pagination.scss';
 import { useFilterContext } from '../../../contexts/FilterContext';
+import { useProductContext } from '../../../contexts/ProductContext';
 
-const Pagination = ({ totalProducts}) => {
+const Pagination = () => {
 
-//     const {currentPage,setCurrentPage}=useFilterContext()
-//  const totalPages=Math.ceil(totalProducts.length/5)
+    const {currentPage,setCurrentPage}=useFilterContext()
+    const {products}=useProductContext()
+ const totalPages=Math.ceil(products.length/5)
 
-// const pageNumbers=Array.from({ length: totalPages }, (_, index) => index + 1);
+const pageNumbers=Array.from({ length: totalPages }, (_, index) => index + 1);
 
-// const onPageChange=(page)=>{
-// setCurrentPage(page)
-// }
+const onPageChange=(page)=>{
+setCurrentPage(page)
+}
 
   return (
     <div className="pagination">

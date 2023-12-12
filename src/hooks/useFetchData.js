@@ -10,9 +10,9 @@ export const useFetchData=(api)=>{
       const fetchData = async () => {
         try {
           const res = await fetchApiData(api);
-          setData(()=>res);
+          setData(res);
         } catch (error) {
-          console.error("Error fetching data:", error);
+          console.error("Api Server Error:", error);
         }
       };
   

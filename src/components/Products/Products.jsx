@@ -11,11 +11,6 @@ const Products = () => {
 
 const {products}=useProductContext()
 
-  // const searchFilteredProducts= totalProducts.filter((product)=>{
-  //   const {title,category}=product
-  //   return title.toLowerCase().includes(searchQuery) || category.toLowerCase().includes(searchQuery)
-   
-  // })
 
 
   

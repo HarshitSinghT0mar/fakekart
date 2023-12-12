@@ -2,15 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { useFetchData } from '../../../hooks/useFetchData';
 // import { useFilterContext } from '../../../contexts/FilterContext';
 import { useProductContext } from '../../../contexts/ProductContext';
+import { fetchApiData } from '../../../services/fetchApiData';
 
 
 const CategoryFilter = () => {
     const [selectedCategory,setSelectedCategory]=useState('')
-    const {setProducts,products}=useProductContext()
+    const {setProducts}=useProductContext()
 
-    const {data:categories}=useFetchData(`https://fakestoreapi.com/products/categories`)
+    const {data}=useFetchData(`https://fakestoreapi.com/products/categories`)
 
-    const {data:categoryProducts}=useFetchData(`https://fakestoreapi.com/products/category/${selectedCategory}`)
+    //create separate all category that is not present in oroginal api
+    const categories=['All',...data]
+    const api=selectedCategory==='All'? `https://fakestoreapi.com/products`:`https://fakestoreapi.com/products/category/${selectedCategory}`
+
+    const {data:categoryProducts}=useFetchData(api)
 
 useEffect(()=>{
     
