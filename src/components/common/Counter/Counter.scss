@@ -1,13 +1,20 @@
 .counter{
     display: flex;
-    gap: 4px;
+    gap: 2px;
   align-items: center;
+  border: 1px solid #ccc;
+  max-width: fit-content;
+  border-radius: 2px;
 
 
     button{
       background: white;
+      color: rgb(70, 69, 69);
    
-    color: gray;
+
+    &:hover{
+      background: none;
+    }
     
     }
 

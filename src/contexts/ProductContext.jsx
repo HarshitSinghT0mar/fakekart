@@ -4,7 +4,7 @@ import { useFetchData } from "../hooks/useFetchData";
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const { data: allProducts, setData: setAllProducts } = useFetchData(
+  const { data: allProducts, setData: setAllProducts, loading, setLoading } = useFetchData(
     `https://fakestoreapi.com/products`
   );
   const [products, setProducts] = useState([]);
@@ -15,7 +15,7 @@ setProducts(allProducts)
 
   return (
     <ProductContext.Provider
-      value={{ products, setProducts, allProducts, setAllProducts }}
+      value={{ products, setProducts, allProducts, setAllProducts,loading, setLoading }}
     >
       {children}
     </ProductContext.Provider>

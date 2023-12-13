@@ -44,3 +44,18 @@ box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
      }
 
 }
+
+@media screen and (max-width: 480px) {
+   .productDetails-card{
+      display: flex;
+      // flex-direction: column;
+      flex-wrap: wrap;
+      border: 1px solid #ddd;
+   }
+  
+   .details-text{
+      background-color: lightblue;
+      flex: 2;
+   }
+   
+}

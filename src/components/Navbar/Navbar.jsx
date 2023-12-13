@@ -2,9 +2,12 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>
+    <nav>
+
+    <div>FakeStore</div>
+    <div></div>
       
-    </div>
+    </nav>
   )
 }
 

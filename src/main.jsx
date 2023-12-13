@@ -12,12 +12,14 @@ import SingleProduct from "./components/SingleProduct/SingleProduct.jsx";
 import { FilterProvider } from "./contexts/FilterContext.jsx";
 import Home from "./Pages/home/Home.jsx";
 import { ProductProvider } from "./contexts/ProductContext.jsx";
+import Cart from "./Pages/Cart/Cart.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="products/:id" element={<SingleProduct />} />
       <Route path="products" element={<Home />} />
+      <Route path="cart" element={<Cart />} />
 
       <Route path="" element={<Home />} />
       

@@ -1,42 +1,50 @@
-import React, { useEffect, useState } from 'react'
-import { useFetchData } from '../../../hooks/useFetchData';
+import React, { useEffect, useState } from "react";
+import { useFetchData } from "../../../hooks/useFetchData";
 // import { useFilterContext } from '../../../contexts/FilterContext';
-import { useProductContext } from '../../../contexts/ProductContext';
-import { fetchApiData } from '../../../services/fetchApiData';
-
+import { useProductContext } from "../../../contexts/ProductContext";
+import { fetchApiData } from "../../../services/fetchApiData";
 
 const CategoryFilter = () => {
-    const [selectedCategory,setSelectedCategory]=useState('')
-    const {setProducts}=useProductContext()
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const { setProducts } = useProductContext();
 
-    const {data}=useFetchData(`https://fakestoreapi.com/products/categories`)
+  const { data } = useFetchData(`https://fakestoreapi.com/products/categories`);
 
-    //create separate all category that is not present in oroginal api
-    const categories=['All',...data]
-    const api=selectedCategory==='All'? `https://fakestoreapi.com/products`:`https://fakestoreapi.com/products/category/${selectedCategory}`
+  //create separate all category that is not present in oroginal api
+  const categories = ["All", ...data];
+  const api =
+    selectedCategory === "All"
+      ? `https://fakestoreapi.com/products`
+      : `https://fakestoreapi.com/products/category/${selectedCategory}`;
 
-    const {data:categoryProducts}=useFetchData(api)
+  const { data: categoryProducts } = useFetchData(api);
 
-useEffect(()=>{
-    
-categoryProducts.length && setProducts(categoryProducts)
+  useEffect(() => {
+    categoryProducts.length && setProducts(categoryProducts);
+  }, [selectedCategory, categoryProducts]);
 
-},[selectedCategory,categoryProducts])
- 
   return (
-    <div className="category-filter-container">
-        <h4>Category</h4>
+    <div className="filter category-filter-container">
+      <h4>Category</h4>
 
-        {categories?.map((category,index) => {
-          return (
-            <div key={index}>
-              <input type="radio" id={category} name="category" value={category} onChange={()=>setSelectedCategory(category)}/>
-              <label htmlFor={category}>{category}</label>
-            </div>
-          );
-        })}
-      </div>
-  )
-}
+      {categories?.map((category, index) => {
+        return (
+          <div key={index}>
+            <input
+              type="radio"
+              id={category}
+              name="category"
+              // checked={selectedCategory === category}
+              value={category}
+              defaultChecked={category === 'All'}
+              onChange={() => setSelectedCategory(category)}
+            />
+            <label htmlFor={category}>{category}</label>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-export default CategoryFilter
+export default CategoryFilter;

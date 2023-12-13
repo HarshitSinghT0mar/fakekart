@@ -9,7 +9,7 @@ import { useProductContext } from "../../contexts/ProductContext";
 const Products = () => {
   // const {searchQuery,setSearchQuery}=useFilterContext()
 
-const {products}=useProductContext()
+const {products,loading}=useProductContext()
 
 
 
@@ -20,7 +20,7 @@ const {products}=useProductContext()
 // },[searchQuery])
 
  
-  if (products.length===0) return <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <main className="products-container">
