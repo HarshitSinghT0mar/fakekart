@@ -9,12 +9,21 @@ import { useCartContext } from '../../contexts/CartContext';
 
 const CartPage = () => {
 
-    const {cartItems}=useCartContext()
+    const {cartItems,setCartItems}=useCartContext()
 
-    console.log(cartItems);
-   
+   const removeFromCart=(id)=>{
+    const restCartItems=cartItems?.filter(item=>{
+      return item.id!==id
+    })
+     setCartItems(restCartItems)
+   }
+
+   const clearCart=()=>{
+     setCartItems([])
+   }
 
   return (
+    <>
     <div className="cart-page">
       <div className="cart-items">
         {cartItems.map((item) => (
@@ -22,7 +31,8 @@ const CartPage = () => {
           <CartItem
             key={item.id}
             item={item}
-         
+         removeFromCart={removeFromCart}
+         clearCart={clearCart}
           />
         ))}
       </div>
@@ -30,6 +40,8 @@ const CartPage = () => {
      
       <SummaryCard cartItems={cartItems} />
     </div>
+    <button onClick={()=>clearCart()}>Clear Cart</button>
+</>
   );
 };
 

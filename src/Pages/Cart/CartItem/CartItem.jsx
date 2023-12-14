@@ -3,13 +3,14 @@ import './CartItem.scss';
 import Counter from '../../../components/common/Counter/Counter';
 
 
-const CartItem = ({ item }) => {
-  const {title, price}=item
+const CartItem = ({ item,removeFromCart}) => {
+  const {title, price,id}=item
 
 
 
 
   return (
+    <>
     <div className="cart-item">
       <img src={item.image} alt={item.name} className="product-image" />
       <div className="product-details">
@@ -21,10 +22,13 @@ const CartItem = ({ item }) => {
       </div>
       <button
         className="product-remove"
+        onClick={()=>removeFromCart(id)}
       >
         Remove
       </button>
     </div>
+   
+    </>
   );
 };
 

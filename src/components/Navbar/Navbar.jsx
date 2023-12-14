@@ -17,7 +17,7 @@ const Navbar = () => {
         <Link to="/cart" >
           <div className="cart-icon">
             <ShoppingCartIcon />
-            <span>{cartItems.length}</span>
+            {cartItems.length!==0&&<span>{cartItems.length}</span>}
           </div>
         </Link>
         {/* <Link to="/profile">Profile</Link> */}
