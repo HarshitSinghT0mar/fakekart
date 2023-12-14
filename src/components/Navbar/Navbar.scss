@@ -12,12 +12,11 @@
     .logo {
       a {
         text-decoration: none;
-        color: white;
+        color: rgb(79, 207, 79);
         font-size: 1.5rem;
-        // font-weight: bold;
 
         &:hover{
-            color: rgb(79, 207, 79);
+            color: rgb(255, 255, 255);
           }
       }
 

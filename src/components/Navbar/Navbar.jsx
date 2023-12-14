@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Navbar.scss";
 import { useCartContext } from "../../contexts/CartContext";
+import PositionedMenu from "../common/PositionedMenu";
 
 const Navbar = () => {
   const { cartItems } = useCartContext();
@@ -20,7 +21,7 @@ const Navbar = () => {
             {cartItems.length!==0&&<span>{cartItems.length}</span>}
           </div>
         </Link>
-        <Link to="login">Login</Link>
+        <PositionedMenu />
       </div>
     </nav>
   );
