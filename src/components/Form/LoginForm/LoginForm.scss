@@ -1,0 +1,16 @@
+// Import shared styles
+@import "../Form.scss";
+
+.login-form {
+  // Inherit common styles from .form class
+  @extend .form;
+
+  // Apply conditional styles specific to login form
+  h2 {
+    font-weight: bold;
+  }
+
+  .primary-button {
+    background-color: rgb(79, 207, 79);
+  }
+}

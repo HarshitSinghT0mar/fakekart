@@ -14,7 +14,9 @@ import Home from "./Pages/home/Home.jsx";
 import { ProductProvider } from "./contexts/ProductContext.jsx";
 import { CartProvider } from "./contexts/CartContext.jsx";
 import CartPage from "./Pages/Cart/CartPage.jsx";
-import Products from "./components/Products/Products.jsx";
+import LoginForm from "./components/Form/LoginForm/LoginForm.jsx";
+import RegisterForm from "./components/Form/RegisterFrom/RegisterForm.jsx";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +26,8 @@ const router = createBrowserRouter(
       <Route path="products" element={<Home />} />
       <Route path="products/:id" element={<SingleProduct />} />
       <Route path="cart" element={<CartPage />} />
+      <Route path="login" element={<LoginForm />} />
+      <Route path="signup" element={<RegisterForm />} />
     </Route>
   )
 );

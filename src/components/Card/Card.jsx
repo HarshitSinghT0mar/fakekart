@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './Card.scss'
 import { Link } from 'react-router-dom'
-import { useProductContext } from '../../contexts/ProductContext'
 
 const Card = (props) => {
   const {category,title,price,image,id,addToCart}=props

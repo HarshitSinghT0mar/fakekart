@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Products.scss";
 import Card from "../Card/Card";
 import { useProductContext } from "../../contexts/ProductContext";
@@ -27,7 +27,6 @@ const addToCart=(id)=>{
     })
 }
 
-console.log(cartItems);
  
   if (loading) return <p>Loading...</p>;
 

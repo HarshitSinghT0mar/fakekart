@@ -20,7 +20,7 @@ const Navbar = () => {
             {cartItems.length!==0&&<span>{cartItems.length}</span>}
           </div>
         </Link>
-        {/* <Link to="/profile">Profile</Link> */}
+        <Link to="login">Login</Link>
       </div>
     </nav>
   );
