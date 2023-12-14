@@ -1,24 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Products.scss";
 import Card from "../Card/Card";
-import { useFilterContext } from "../../contexts/FilterContext";
 import { useProductContext } from "../../contexts/ProductContext";
+import { useCartContext } from "../../contexts/CartContext";
 
 
 
 const Products = () => {
-  // const {searchQuery,setSearchQuery}=useFilterContext()
 
 const {products,loading}=useProductContext()
 
+const {cartItems,setCartItems}=useCartContext()
 
 
-  
 
-// useEffect(()=>{
-// setProducts(searchFilteredProducts)
-// },[searchQuery])
+const addToCart=(id)=>{
+  const productExists = cartItems?.some((item) => item.id === id);
+    if (productExists) {
+      return;
+    }
 
+    const newCartItem=products.find(product=>product.id===id)
+
+    setCartItems(prev=>{
+      return [...prev,newCartItem]
+    })
+}
+
+console.log(cartItems);
  
   if (loading) return <p>Loading...</p>;
 
@@ -35,6 +44,7 @@ const {products,loading}=useProductContext()
             price={price}
             id={id}
             category={category}
+            addToCart={addToCart}
           />
         );
       })}

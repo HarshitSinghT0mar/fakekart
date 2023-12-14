@@ -1,6 +1,4 @@
-// CartPage.scss
 .cart-page {
-   
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -8,7 +6,6 @@
     grid-template-columns: 1.5fr 1fr;
     gap: 8px;
     
-  
     h2 {
       font-size: 24px;
       margin-bottom: 20px;
@@ -17,7 +14,6 @@
     .cart-items {
       display: flex;
       flex-wrap: wrap;
-    //   justify-content: space-between;
       align-items: center;
     }
   

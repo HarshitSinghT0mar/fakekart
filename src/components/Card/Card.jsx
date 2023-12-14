@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Card.scss'
 import { Link } from 'react-router-dom'
+import { useProductContext } from '../../contexts/ProductContext'
 
 const Card = (props) => {
-  const {category,title,price,image,id}=props
-
-
+  const {category,title,price,image,id,addToCart}=props
 
   return (
    
@@ -22,7 +21,7 @@ const Card = (props) => {
     
     <div className='card-footer'>
       <span className='price'>{`$${price}`}</span>
-      <button className='add-cart-btn'>Add to Cart</button>
+      <button className='add-cart-btn' onClick={()=>addToCart(id)}>Add to Cart</button>
     </div>
     </div>
     </div>

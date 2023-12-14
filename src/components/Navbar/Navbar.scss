@@ -1,0 +1,64 @@
+// Navbar.scss
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px  14px;
+    font-size: x-small;
+    font-weight: bold;
+   
+  
+    .logo {
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.5rem;
+        // font-weight: bold;
+
+        &:hover{
+            color: rgb(79, 207, 79);
+          }
+      }
+
+      
+    }
+  
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      .cart-icon{
+        position: relative;
+
+        span{
+            position: absolute;
+            top:-2px;
+            right: -10px;
+        //    padding: 2px;
+         width: 12px;
+         height: 12px;
+           background: red;
+           color: white;
+           border-radius: 50%;
+           margin: auto;
+           text-align: center;
+           line-height: 12px;
+           font-size: 8px;
+        }
+      }
+  
+      a {
+        text-decoration: none;
+        color: white;
+        margin-left: 20px;
+        // font-weight: bold;
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: rgb(79, 207, 79);
+        }
+      }
+    }
+  }
+  
